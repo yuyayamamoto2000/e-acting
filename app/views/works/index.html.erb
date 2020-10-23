@@ -1,4 +1,10 @@
 <h1>ブログ一覧</h1>
+<%= search_form_for @q do |f| %>
+    <%= f.label :gametitle_cont %>
+    <%= f.search_field :gametitle_cont %>
+
+    <%= f.submit %>
+<% end %>
 <table>
   <tr>
     <th>依頼</th>

@@ -4,7 +4,6 @@ class WorksController < ApplicationController
   def index
     @p = Work.all.ransack(params[:q])
     @works = @p.result(distinct: true)
-
   end
 
   def new
