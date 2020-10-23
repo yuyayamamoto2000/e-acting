@@ -12,8 +12,9 @@
   <body>
     <header>
       <% if user_signed_in? %>
-           <%= link_to "ブログ投稿", works_path %>
+           <%= link_to "依頼投稿", new_work_path %>
            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+           <%= link_to "マイページ", users_show_path %>
          <% else %>
            <%= link_to "新規登録", new_user_registration_path %>
            <%= link_to "ログイン", new_user_session_path %>
