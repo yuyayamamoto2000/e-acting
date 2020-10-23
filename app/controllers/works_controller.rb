@@ -2,7 +2,9 @@ class WorksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   before_action :set_work, only: [:show, :edit, :update, :destroy]
   def index
-    @works = Work.all
+    @p = Work.all.ransack(params[:q])
+    @works = @p.result(distinct: true)
+
   end
 
   def new
