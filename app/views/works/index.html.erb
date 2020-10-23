@@ -1,0 +1,21 @@
+<h1>ブログ一覧</h1>
+<p><%= notice %></p>
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th>
+  </tr>
+<% @works.each do |work| %>
+  <tr>
+    <td><%= work.method %></td>
+    <td><%= work.gametitle %></td>
+    <td><%= work.work %></td>
+    <td><%= work.deadline %></td>
+    <td><%= work.reward %></td>
+    <td><%= work.payment %></td>
+    <td><%= link_to '詳細を確認する', work_path(work.id) %></td>
+    <td><%= link_to "依頼を編集する", edit_work_path(work.id), data: { confirm: '本当に編集していいですか？' } %></td>
+    <td><%= link_to '依頼を削除する', work_path(work.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+  </tr>
+<% end %>
+</table>

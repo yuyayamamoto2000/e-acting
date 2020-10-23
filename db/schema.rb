@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_044639) do
     t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "model", null: false
+    t.integer "gamemodel", null: false
     t.string "work", null: false
   end
 

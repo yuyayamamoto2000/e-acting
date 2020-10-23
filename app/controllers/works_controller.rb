@@ -1,4 +1,4 @@
-class WorkController < ApplicationController
+class WorksController < ApplicationController
   before_action :set_work, only: [:show, :edit, :update, :destroy]
   def index
     @works = Work.all
@@ -50,7 +50,7 @@ class WorkController < ApplicationController
 
   private
   def work_params
-    params.require(:work).permit(:method, :gametitle, :deadline, :reward, :payment, :comment)
+    params.require(:work).permit(:method, :gametitle, :deadline, :reward, :payment, :comment, :gamemodel, :work)
   end
 
   def set_work

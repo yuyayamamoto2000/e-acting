@@ -10,13 +10,14 @@
     </div>
   <% end %>
     <%= form.label :method %>
-    <%= form.select(:method, {選択してください: '選択してください', 代行: '代行', 同行: '同行'}, { class: "work_method" }) %>
+    <%= form.select(:method, {代行: '代行', 同行: '同行'}, { class: "work_method" }) %>
 
   <div class="work_gametitle">
     <%= form.label :gametitle %>
     <%= form.text_field :gametitle %>
   </div>
-    <%= form.select(:method, {選択してください: '選択してください', PC: 'PC', PS4: 'PS4', XBOX: 'XBOX', Switch: 'Switch', Iphone: 'Iphone', Android: 'Android'}, { class: "work_model" }) %>
+    <%= form.label :gamemodel %>
+    <%= form.select(:gamemodel, {PC: 'PC', PS4: 'PS4', XBOX: 'XBOX', Switch: 'Switch', Iphone: 'Iphone', Android: 'Android'}, { class: "work_model" }) %>
   <div class="work_work">
     <%= form.label :work %>
     <%= form.text_field :work %>
@@ -29,7 +30,7 @@
     <%= form.label :reward %>
     <%= form.text_field :reward %>円
   </div>
-  <%= form.select(:method, {選択してください: '選択してください', 銀行振り込み: '銀行振り込み', クレカ: 'クレカ', プリペイド: 'プリペイド'}, { class: "work_payment" }) %>
+  <%= form.select(:payment, {銀行振り込み: '銀行振り込み', クレカ: 'クレカ', プリペイド: 'プリペイド'}, { class: "work_payment" }) %>
   <%= form.submit %>
 <% end %>
 <%= link_to "依頼一覧画面にもどる", works_path %>

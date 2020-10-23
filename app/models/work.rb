@@ -4,10 +4,10 @@ class Work < ApplicationRecord
   validates :deadline, presence: true
   validates :reward, presence: true
   validates :payment, presence: true
-  validates :model, presence: true
+  validates :gamemodel, presence: true
   validates :work, presence: true
 
-  enum method: %i[選択してください 代行 同行]
-  enum model: %i[選択してください PC PS4 XBOX Switch Iphone Android]
-  enum payment: %i[選択してください 銀行振り込み クレカ プリペイド]
+  enum method: %i[ 代行 同行]
+  enum gamemodel: %i[ PC PS4 XBOX Switch Iphone Android]
+  enum payment: %i[ 銀行振り込み クレカ プリペイド]
 end
