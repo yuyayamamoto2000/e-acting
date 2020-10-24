@@ -26,6 +26,8 @@ class WorksController < ApplicationController
   end
 
   def show
+    @comments = @work.comments
+    @comment = @work.comments.build
   end
 
   def edit

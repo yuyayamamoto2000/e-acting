@@ -7,9 +7,9 @@ class CommentsController < ApplicationController
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to blog_path(@work) }
+        format.js { render :index }
       else
-        format.html { redirect_to blog_path(@work), notice: '投稿できませんでした...' }
+        format.html { redirect_to work_path(@work), notice: '投稿できませんでした...' }
       end
     end
   end
