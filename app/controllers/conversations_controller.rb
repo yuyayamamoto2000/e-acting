@@ -1,4 +1,6 @@
 class ConversationsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @conversations = Conversation.all
   end
@@ -8,6 +10,7 @@ class ConversationsController < ApplicationController
       @conversation = Conversation.between(params[:sender_id], params[:recipient_id]).first#存在した場合、その会話（チャットルーム）情報を取得
     else
       @conversation = Conversation.create!(conversation_params)#もし、過去に一件も存在しなかった場合、強制的に会話（チャットルーム）情報を生成
+                                                                  #この時、送られてきたparamsの値を利用して会話を生成します。そのためにストロングパラメータconversasion_paramsを使います。
     end
     redirect_to conversation_messages_path(@conversation)
   end
