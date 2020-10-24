@@ -21,11 +21,17 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = @conversation.messages.build(message_params)
-    if @message.save
+    @message = @conversation.messages.build(message_params) #送られてきたparamsの値を利用して会話にひもづくメッセージを生成
+    if @message.save #保存ができれば、会話にひもづくメッセージ一覧の画面（つまりチャットルーム）に遷移する
       redirect_to conversation_messages_path(@conversation)
     else
       render 'index'
     end
+  end
+
+  private
+
+  def message_params
+    params.require(:message).permit(:body, :user_id)
   end
 end
