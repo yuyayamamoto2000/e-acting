@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "users/show"
 
   resources :works do
+    resources :comments
     collection do
       post :confirm
     end

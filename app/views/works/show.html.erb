@@ -6,3 +6,13 @@
 <p>期日:<%= @work.deadline %></p>
 <p>報酬:<%= @work.reward %></p>
 <p>支払い方法:<%= @work.payment %></p>
+<p>コメント一覧（ここから下の内容が重要）</p>
+ <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
+ <div id="comments_area">
+   <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+   <%= render partial: 'comments/index', locals: { comments: @comments, work: @work } %>
+ </div>
+ <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+ <%= render partial: 'comments/form', locals: { comment: @comment, work: @work } %>
+ <%= link_to '編集', edit_work_path(@work) %> |
+ <%= link_to '戻る', works_path %>
