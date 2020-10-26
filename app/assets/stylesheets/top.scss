@@ -1,0 +1,23 @@
+// Place all the styles related to the top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// .carousel-item {
+//     position: relative;
+//     display: none;
+//     -ms-flex-align: center;
+//     align-items: center;
+//     width: 100%;
+//     -webkit-backface-visibility: hidden;
+//     backface-visibility: hidden;
+//     -webkit-perspective: 1000px;
+//     perspective: 1000px;
+// }
+
+.bd-example {
+    position: relative;
+    padding: 1rem;
+    margin: 1rem -15px 0;
+    border: solid #f8f9fa;
+    border-width: .2rem 0 0;
+}

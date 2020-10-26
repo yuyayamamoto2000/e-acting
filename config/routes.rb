@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  
+
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  root 'works#index'
+  root 'top#index'
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
 
