@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?#deviseコントローラーにストロングパラメータを追加する
 
   before_action :authenticate_user!#ログイン済みユーザーのみアクセスを許可する
+
   protected
   def configure_permitted_parameters
     # サインアップ時にnameのストロングパラメータを追加
