@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
-
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'carrierwave'

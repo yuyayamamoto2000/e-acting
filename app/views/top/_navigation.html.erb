@@ -1,48 +1,38 @@
-<header id="header" class="header">
-    <div class="container">
-        <h1 class="logo">
-            <a class="scrollto" href="#hero">
-                <!-- <span class="logo-icon-wrapper"> -->
-                    <%#= image_tag 'logo-icon.svg', alt: "icon" %>
-                <!-- </span> -->
-                <span class="text">
-                    <span class="highlight"> APP </span>
-                    KIT
-                </span>
+<div class="container-fuild">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
             </a>
-
-        </h1>
-        <nav class="main-nav navbar-expand-md float-right navbar-inverse" role="navigation">
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button><!--//nav-toggle-->
-
-            <div id="navbar-collapse" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <% if user_signed_in? %>
-                       <li class="nav-item">
-                            <%= link_to "依頼投稿", new_work_path, class: "nav-link scrollto" %>
-                        </li>
-                       <li class="nav-item">
-                            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link scrollto" %>
-                        </li>
-                       <li class="nav-item">
-                            <%= link_to "マイページ", user_path(current_user.id), class: "nav-link scrollto" %>
-                        </li>
-                     <% else %>
-                       <li class="nav-item">
-                            <%= link_to "新規登録", new_user_registration_path, class: "nav-link scrollto" %>
-                        </li>
-                       <li class="nav-item">
-                            <%= link_to "ログイン", new_user_session_path, class: "nav-link scrollto" %>
-                        </li>
-                  <% end %>
-                </ul>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
             </div>
-        </nav>
-    </div>
-</header>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+</div>
