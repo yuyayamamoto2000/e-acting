@@ -1,36 +1,39 @@
-<%= form_with(model: @work, local: true, url: choose_new_or_edit ) do |form| %>
-  <% if @work.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @work.errors.count %>件のエラーがあります。</h2>
-      <ul>
-      <% @work.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-    <%= form.label :method %>
-    <%= form.select(:method, {代行: '代行', 同行: '同行'}, { class: "work_method" }) %>
+<div class="contents">
 
-  <div class="work_gametitle">
-    <%= form.label :gametitle %>
-    <%= form.text_field :gametitle %>
-  </div>
-    <%= form.label :gamemodel %>
-    <%= form.select(:gamemodel, {PC: 'PC', PS4: 'PS4', XBOX: 'XBOX', Switch: 'Switch', Iphone: 'Iphone', Android: 'Android'}, { class: "work_model" }) %>
-  <div class="work_work">
-    <%= form.label :work %>
-    <%= form.text_field :work %>
-  </div>
-  <div class="work_deadline">
-    <%= form.label :deadline %>
-    <%= form.date_field :deadline %>
-  </div>
-  <div class="work_reward">
-    <%= form.label :reward %>
-    <%= form.text_field :reward %>円
-  </div>
-  <%= form.select(:payment, {銀行振り込み: '銀行振り込み', クレカ: 'クレカ', プリペイド: 'プリペイド'}, { class: "work_payment" }) %>
-  <%= form.submit %>
-<% end %>
-<%= link_to "依頼一覧画面にもどる", works_path %>
+    <%= form_with(model: @work, local: true, url: choose_new_or_edit ) do |form| %>
+      <% if @work.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= @work.errors.count %>件のエラーがあります。</h2>
+          <ul>
+          <% @work.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+        <%= form.label :method %>
+        <%= form.select(:method, {代行: '代行', 同行: '同行'}, { class: "work_method" }) %>
+
+      <div class="work_gametitle">
+        <%= form.label :gametitle %>
+        <%= form.text_field :gametitle %>
+      </div>
+        <%= form.label :gamemodel %>
+        <%= form.select(:gamemodel, {PC: 'PC', PS4: 'PS4', XBOX: 'XBOX', Switch: 'Switch', Iphone: 'Iphone', Android: 'Android'}, { class: "work_model" }) %>
+      <div class="work_work">
+        <%= form.label :work %>
+        <%= form.text_field :work %>
+      </div>
+      <div class="work_deadline">
+        <%= form.label :deadline %>
+        <%= form.date_field :deadline %>
+      </div>
+      <div class="work_reward">
+        <%= form.label :reward %>
+        <%= form.text_field :reward %>円
+      </div>
+      <%= form.select(:payment, {銀行振り込み: '銀行振り込み', クレカ: 'クレカ', プリペイド: 'プリペイド'}, { class: "work_payment" }) %>
+      <%= form.submit %>
+    <% end %>
+    <%= link_to "依頼一覧画面にもどる", works_path %>
+</div>

@@ -11,6 +11,7 @@
 
   <body>
     <%= render partial: 'top/navigation' %>
+
     <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
     <% end %>
@@ -18,5 +19,6 @@
       <p class="alert alert-error"><%= alert %></p>
     <% end %>
     <%= yield %>
+    <%= render partial: 'top/footer' %>
   </body>
 </html>

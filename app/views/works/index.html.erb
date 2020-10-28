@@ -1,4 +1,6 @@
-<h1>ブログ一覧</h1>
+<div class="index_contents">
+
+<h2>ブログ一覧</h2>
 <%= search_form_for @q do |f| %>
     <%= f.label :gametitle_cont %>
     <%= f.search_field :gametitle_cont %>
@@ -28,3 +30,5 @@
   </tr>
 <% end %>
 </table>
+  
+</div>

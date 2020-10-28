@@ -1,4 +1,7 @@
-<h3>以下の内容で、掲載する。</h3>
+<h2>以下の内容で、掲載する。</h2>
+
+<div class="confirm_contents">
+
 <%= form_with(model: @work, url: works_path, local: true) do |form| %>
   <%= form.hidden_field :method %>
   <%= form.hidden_field :gametitle %>
@@ -19,3 +22,5 @@
   <%= form.submit "戻る", name: 'back' %>
 <% end %>
 <%= link_to '戻る', :back %>
+  
+</div>

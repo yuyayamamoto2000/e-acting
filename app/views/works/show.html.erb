@@ -1,4 +1,7 @@
-依頼詳細画面
+<h2>依頼詳細画面</h2>
+
+<div class="show_contents">
+
 <p>依頼形式:<%= @work.method %></p>
 <p>ゲームタイトル:<%= @work.gametitle %></p>
 <p>機種:<%= @work.gamemodel %></p>
@@ -16,3 +19,5 @@
  <%= render partial: 'comments/form', locals: { comment: @comment, work: @work } %>
  <%= link_to '編集', edit_work_path(@work) %> |
  <%= link_to '戻る', works_path %>
+
+ </div>
