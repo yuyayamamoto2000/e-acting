@@ -11,8 +11,8 @@
           </ul>
         </div>
       <% end %>
-        <%= form.label :method %>
-        <%= form.select(:method, {代行: '代行', 同行: '同行'}, { class: "work_method" }) %>
+        <%= form.label :kind %>
+        <%= form.select(:kind, {代行: '代行', 同行: '同行'}, { class: "work_kind" }) %>
 
       <div class="work_gametitle">
         <%= form.label :gametitle %>

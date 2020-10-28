@@ -17,7 +17,7 @@ class WorksController < ApplicationController
     else
       if @work.save
         # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
-        redirect_to new_work_path, notice: "依頼を作成しました！"
+        redirect_to works_path, notice: "依頼を作成しました！"
       else
         # 入力フォームを再描画します。
         render :new
@@ -54,7 +54,7 @@ class WorksController < ApplicationController
 
   private
   def work_params
-    params.require(:work).permit(:method, :gametitle, :deadline, :reward, :payment, :comment, :gamemodel, :work)
+    params.require(:work).permit(:kind, :gametitle, :deadline, :reward, :payment, :comment, :gamemodel, :work)
   end
 
   def set_work

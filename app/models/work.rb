@@ -2,7 +2,7 @@ class Work < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
-  validates :method, presence: true
+  validates :kind, presence: true
   validates :gametitle, presence: true
   validates :deadline, presence: true
   validates :reward, presence: true

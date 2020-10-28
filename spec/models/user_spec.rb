@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
 
       context 'profileが空の場合' do
         it 'バリデーションにひっかる' do
-          user = User.new(name: 'test', profile: 'test')
+          user = User.new(name: 'test', profile: '')
           expect(user).not_to be_valid
         end
       end

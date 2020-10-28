@@ -3,7 +3,7 @@
 <div class="confirm_contents">
 
 <%= form_with(model: @work, url: works_path, local: true) do |form| %>
-  <%= form.hidden_field :method %>
+  <%= form.hidden_field :kind %>
   <%= form.hidden_field :gametitle %>
   <%= form.hidden_field :gamemodel %>
   <%= form.hidden_field :work %>
@@ -11,7 +11,7 @@
   <%= form.hidden_field :reward %>
   <%= form.hidden_field :gametitle %>
   <%= form.hidden_field :payment %>
-  <p>依頼形式:<%= @work.method %></p>
+  <p>依頼形式:<%= @work.kind %></p>
   <p>ゲームタイトル:<%= @work.gametitle %></p>
   <p>機種:<%= @work.gamemodel %></p>
   <p>依頼内容:<%= @work.work %></p>
@@ -22,5 +22,5 @@
   <%= form.submit "戻る", name: 'back' %>
 <% end %>
 <%= link_to '戻る', :back %>
-  
+
 </div>
