@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
-  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :users, controllers: {
+        registrations: 'users/registrations'
+}
+
   root 'top#index'
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
 
-  resources :users
+  resources :users, only: [:show, :index]
 
   resources :conversations do
     resources :messages
