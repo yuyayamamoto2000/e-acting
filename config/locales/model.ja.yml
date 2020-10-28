@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      blog: ブログ
+      user: ユーザー
+    attributes:
+      work:
+        method: 種類
+        gametitle: ゲームタイトル
+        deadline: 期日
+        reward: 報酬
+        payment: 支払い方法
+        comment: コメント
+        gamemodel: 機種
+        work: 内容
+      user:
+        image: プロフィール画像
+        name: 名前
+        email: メールアドレス
+      message:
+        body: コメント内容
+      comment:
+        content: コメント内容
