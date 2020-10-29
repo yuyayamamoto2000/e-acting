@@ -1,34 +1,34 @@
 <div class="index_contents">
 
-<h2>ブログ一覧</h2>
-<%= search_form_for @q do |f| %>
-    <%= f.label :gametitle_cont %>
-    <%= f.search_field :gametitle_cont %>
+  <h2>ブログ一覧</h2>
+  <%= search_form_for @q do |f| %>
+  <%= f.label :gametitle_cont %>
+  <%= f.search_field :gametitle_cont %>
 
-    <%= f.submit %>
-<% end %>
-<table>
-  <tr>
-    <th>依頼</th>
-    <th>ゲームタイトル</th>
-    <th>依頼内容</th>
-    <th>期日</th>
-    <th>報酬</th>
-    <th>支払い方法</th>
-  </tr>
-<% @works.each do |work| %>
-  <tr>
-    <td><%= work.kind %></td>
-    <td><%= work.gametitle %></td>
-    <td><%= work.work %></td>
-    <td><%= work.deadline %></td>
-    <td><%= work.reward %></td>
-    <td><%= work.payment %></td>
-    <td><%= link_to '詳細を確認する', work_path(work.id) %></td>
-    <td><%= link_to "依頼を編集する", edit_work_path(work.id), data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><%= link_to '依頼を削除する', work_path(work.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
-  </tr>
-<% end %>
-</table>
+  <%= f.submit %>
+  <% end %>
+  <table>
+    <tr>
+      <th>依頼</th>
+      <th>ゲームタイトル</th>
+      <th>依頼内容</th>
+      <th>期日</th>
+      <th>報酬</th>
+      <th>支払い方法</th>
+    </tr>
+    <% @works.each do |work| %>
+    <tr>
+      <td><%= work.kind %></td>
+      <td><%= work.gametitle %></td>
+      <td><%= work.work %></td>
+      <td><%= work.deadline %></td>
+      <td><%= work.reward %></td>
+      <td><%= work.payment %></td>
+      <td><%= link_to '詳細を確認する', work_path(work.id) %></td>
+      <td><%= link_to "依頼を編集する", edit_work_path(work.id), data: { confirm: '本当に編集していいですか？' } %></td>
+      <td><%= link_to '依頼を削除する', work_path(work.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+    </tr>
+    <% end %>
+  </table>
 
 </div>
