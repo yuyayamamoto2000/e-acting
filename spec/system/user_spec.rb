@@ -18,42 +18,26 @@ RSpec.describe 'ユーザー機能', type: :system do#describeには、「何の
         click_on 'commit'
 
         expect(page).to have_content 'user'
-
       end
-      binding.irb
     end
   end
-  # describe 'セッション機能テスト' do
-  # context '一般ユーザー' do
-  #   it "ログインができる事" do
-  #     visit new_user_session_path
-  #     fill_in 'session[email]',with: 'test@gmail.com'
-  #     fill_in 'session[password]',with: 'password'
-  #     sleep 0.5
-  #     click_on 'commit'
-  #     expect(page).to have_content 'タスク一覧'
-  #   end
-  # end
-  #   context 'ログインしている場合' do
-  #     before do
-  #       visit new_session_path
-  #       fill_in 'session[email]',with: 'test@gmail.com'
-  #       fill_in 'session[password]',with: 'password'
-  #       sleep 0.5
-  #       click_on 'commit'
-  #     end
-  #     it "詳細ページに移動" do
-  #       click_on 'Profile'
-  #       expect(page).to have_content 'test@gmail.com'
-  #     end
-  #     it '他人の詳細ページにとぶとタスク一覧画面に戻されること' do
-  #       visit user_path(admin_user.id)
-  #       expect(page).to have_content 'アクセスできません。'
-  #     end
-  #     it 'ログアウトができる' do
-  #       click_on 'Logout'
-  #       expect(page).to have_content 'ログアウトしました。'
-  #     end
-  #   end
-  # end
+  describe 'セッション機能テスト' do
+    context 'ユーザーログイン、ログアウト' do
+      before do
+        visit new_user_session_path
+        fill_in 'user[email]',with: 'test@gmail.com'
+        fill_in 'user[password]',with: 'password'
+        sleep 0.5
+        click_on 'commit'
+      end
+      it "ログインができる事" do
+        expect(page).to have_content 'test'
+      end
+
+      it 'ログアウトする' do
+        click_on 'ログアウト'
+        expect(page).to have_content 'ログアウトしました。'
+      end
+    end
+  end
 end
