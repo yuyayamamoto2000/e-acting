@@ -1,5 +1,4 @@
 class WorksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   before_action :set_work, only: [:show, :edit, :update, :destroy]
   def index
     @q = Work.ransack(params[:q])
@@ -11,7 +10,7 @@ class WorksController < ApplicationController
   end
 
   def create
-    @work = Work.new(work_params)
+    @work = current_user.works.build(work_params)
     if params[:back]
       render :new
     else
@@ -44,11 +43,11 @@ class WorksController < ApplicationController
 
   def destroy
     @work.destroy
-    redirect_to blogs_path, notice: "依頼を消去しました！"
+    redirect_to works_path, notice: "依頼を消去しました！"
   end
 
   def confirm
-    @work = Work.new(work_params)
+    @work = current_user.works.build(work_params)
     render :new if @work.invalid?
   end
 

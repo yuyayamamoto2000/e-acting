@@ -4,7 +4,7 @@ FactoryBot.define do
     gametitle { 'テストタイトル' }
     gamemodel { 'PS4' }
     work { 'テスト内容' }
-    deadline { '2020-10-28' }
+    deadline { '2030-10-28' }
     reward { 10000 }
     payment { 'クレカ' }
   end
@@ -15,7 +15,7 @@ FactoryBot.define do
     gametitle { 'テストタイトル1' }
     gamemodel { 'PS4' }
     work { 'テスト内容' }
-    deadline { '2020-10-28' }
+    deadline { '2030-10-28' }
     reward { 10000 }
     payment { 'クレカ' }
   end
@@ -25,7 +25,7 @@ FactoryBot.define do
     gametitle { 'テストタイトル2' }
     gamemodel { 'PS4' }
     work { 'テスト内容' }
-    deadline { '2020-10-28' }
+    deadline { '2030-10-28' }
     reward { 10000 }
     payment { 'クレカ' }
   end
@@ -34,7 +34,7 @@ FactoryBot.define do
     gametitle { 'テストタイトル3' }
     gamemodel { 'PS4' }
     work { 'テスト内容' }
-    deadline { '2020-10-28' }
+    deadline { '2030-10-28' }
     reward { 10000 }
     payment { 'クレカ' }
   end
