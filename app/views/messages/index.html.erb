@@ -6,13 +6,19 @@
     <% if message.body.present? %>
       <div class="item">
         <div class="content">
-          <div class="header"><strong><%= message.user.name %></strong> <%= message.message_time %></div>
+          <div class="header">
+            <strong><%= message.user.name %></strong>
+            <br>
+             <%= message.message_time %></div>
+             <br>
           <div class="list">
             <div class="item">
               <i class="right triangle icon"></i>
+              <br>
               <%= message.body %> /
               <% if message.user == current_user %>
                 <%= message.read ? '既読' : '未読' %>
+                <br>
               <% end %>
             </div>
           </div>
@@ -21,6 +27,8 @@
     <% end %>
   <% end %>
 </div>
+<br>
+<br>
 <%= form_with(model: [@conversation, @message]) do |f| %>
   <div class="field">
     <%= f.text_area :body, class: "form-control" %>
