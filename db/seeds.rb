@@ -5,22 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# 10.times do |n|
-#   User.create!(name:  "test#{n+1}",
-#                email: "test#{n+1}@example.com",
-#                password:  "password",
-#                password_confirmation: "password"
-#               )
-# end
+10.times do |n|
+  User.create!(name:  "test#{n+1}",
+               email: "test#{n+1}@example.com",
+               password:  "password",
+               password_confirmation: "password"
+              )
+end
 
-# 10.times do |n|
-#   Work.create!(kind:  0,
-#                gametitle: "test",
-#                deadline:  '2020-11-30',
-#                reward: 20000,
-#                payment: 'クレカ',
-#                gamemodel: 'PS4',
-#                work: 'レベリング',
-#                user_id: User.first.id
-#               )
-# end
+10.times do |n|
+  Work.create!(kind:  0,
+               gametitle: "test",
+               deadline:  '2020-11-30',
+               reward: 20000,
+               payment: 'クレカ',
+               gamemodel: 'PS4',
+               work: 'レベリング',
+               user_id: User.first.id
+              )
+end
