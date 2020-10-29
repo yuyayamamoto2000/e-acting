@@ -20,6 +20,7 @@
 #                reward: 20000,
 #                payment: 'クレカ',
 #                gamemodel: 'PS4',
-#                work: 'レベリング'
+#                work: 'レベリング',
+#                user_id: User.first.id
 #               )
 # end

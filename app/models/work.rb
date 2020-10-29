@@ -1,6 +1,7 @@
 class Work < ApplicationRecord
 
   has_many :comments, dependent: :destroy
+  belongs_to :user
 
   validate :date_before_today, on: :create
   validates :kind, presence: true
@@ -18,4 +19,5 @@ class Work < ApplicationRecord
   enum method: %i[ 代行 同行]
   enum gamemodel: %i[ PC PS4 XBOX Switch Iphone Android]
   enum payment: %i[ 銀行振り込み クレカ プリペイド]
+
 end

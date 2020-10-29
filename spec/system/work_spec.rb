@@ -1,9 +1,9 @@
 require 'rails_helper'
 RSpec.describe 'タスク管理機能', type: :system do#describeには、「何の仕様についてなのか」
 
-  let!(:first_work){ FactoryBot.create(:first_work) }
-  let!(:second_work){ FactoryBot.create(:second_work) }
-  let!(:third_work){ FactoryBot.create(:third_work) }
+  let!(:first_work){ FactoryBot.create(:first_work, user: user)  }
+  let!(:second_work){ FactoryBot.create(:second_work, user: user) }
+  let!(:third_work){ FactoryBot.create(:third_work, user: user) }
   let!(:user){ FactoryBot.create(:user) }
   # let(:label_list){ FactoryBot.create_list(:label, 10) }
   describe '新規作成機能' do
@@ -51,7 +51,7 @@ RSpec.describe 'タスク管理機能', type: :system do#describeには、「何
       fill_in 'user[password]',with: 'password'
       click_on 'commit'
     end
-    
+
     context 'タイトルで検索をした場合' do
       it "検索キーワードを含む依頼が絞り込まれる" do
         visit works_path

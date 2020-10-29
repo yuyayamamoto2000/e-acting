@@ -20,7 +20,6 @@ RSpec.describe 'ユーザー機能', type: :system do#describeには、「何の
 
         expect(page).to have_content 'user'
       end
-
     end
   end
   describe 'セッション機能テスト' do
@@ -52,6 +51,18 @@ RSpec.describe 'ユーザー機能', type: :system do#describeには、「何の
         expect(page).to have_content 'ログアウトしました。'
       end
     end
+    context "ログインしている場合" do
+      it "新規登録に飛ぼうした場合" do
+        visit new_user_session_path
+        fill_in 'user[email]',with: 'test@gmail.com'
+        fill_in 'user[password]',with: 'password'
+        sleep 0.5
+        click_on 'commit'
+        visit new_user_session_path
+
+        expect(page).to have_content 'すでにログインしています。'
+      end
+    end
   end
   describe 'コメント機能テスト' do
     before do
@@ -65,30 +76,18 @@ RSpec.describe 'ユーザー機能', type: :system do#describeには、「何の
       it "コメントができる事" do
         click_on 'ユーザー一覧画面'
         click_on 'メッセージ'
-        binding.irb
         fill_in 'message[body]', with: 'テスト'
         click_on 'commit'
-
+        expect(page).to have_content 'テスト'
       end
-
-      # it "ログインできないこと" do
-      #   visit new_user_session_path
-      #   fill_in 'user[email]',with: 'apex@gmail.com'
-      #   fill_in 'user[password]',with: 'password'
-      #   sleep 0.5
-      #   click_on 'commit'
-      #   expect(page).to have_content 'メールアドレスまたはパスワードが違います。'
-      # end
-      #
-      # it 'ログアウトする' do
-      #   visit new_user_session_path
-      #   fill_in 'user[email]',with: 'test@gmail.com'
-      #   fill_in 'user[password]',with: 'password'
-      #   sleep 0.5
-      #   click_on 'commit'
-      #   click_on 'ログアウト'
-      #   expect(page).to have_content 'ログアウトしました。'
-      # end
+    end
+  end
+  describe '未登録ユーザー処理' do
+    context '依頼一覧画面に移動しようした場合' do
+      it "ログイン画面に飛ばされる" do
+        visit works_path
+        expect(page).to have_content 'ログインしてください。'
+      end
     end
   end
 end
