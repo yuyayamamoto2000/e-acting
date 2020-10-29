@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    # binding.irb
     @user = User.find(params[:id])
   end
 end

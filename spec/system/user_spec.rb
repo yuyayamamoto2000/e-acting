@@ -7,7 +7,6 @@ RSpec.describe 'ユーザー機能', type: :system do#describeには、「何の
     context 'ユーザーが新規作成した場合' do #contextには「状況・状態を分類」したテスト内容
       it '作成したユーザーが表示される' do#itには「期待する動作」を記載します。
 
-
         visit  new_user_session_path
 
         click_on 'アカウント登録'
@@ -17,8 +16,11 @@ RSpec.describe 'ユーザー機能', type: :system do#describeには、「何の
         fill_in 'user[password]',with: 'user@gmail.com'
         fill_in 'user[password_confirmation]',with: 'user@gmail.com'
         click_on 'commit'
+
         expect(page).to have_content 'user'
+
       end
+      binding.irb
     end
   end
   # describe 'セッション機能テスト' do
