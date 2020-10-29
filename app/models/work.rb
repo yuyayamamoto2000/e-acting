@@ -2,6 +2,7 @@ class Work < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
+  validate :date_before_today, on: :create
   validates :kind, presence: true
   validates :gametitle, presence: true
   validates :deadline, presence: true
@@ -9,6 +10,10 @@ class Work < ApplicationRecord
   validates :payment, presence: true
   validates :gamemodel, presence: true
   validates :work, presence: true
+
+  def date_before_today
+    errors.add(:deadline, "は本日以降のものを選択してください") if deadline.nil? || deadline < Date.today
+  end
 
   enum method: %i[ 代行 同行]
   enum gamemodel: %i[ PC PS4 XBOX Switch Iphone Android]
