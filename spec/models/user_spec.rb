@@ -24,7 +24,7 @@ RSpec.describe User, type: :model do
 
       context 'profile' do
         it '空の場合バリデーションにひっかかる' do
-          user = User.new(name: 'test', email: 'test@gmail.com', profile: '', password: 'password', password_confirmation: 'password')
+          user = User.new(name: 'test',profile: '', password: 'password', password_confirmation: 'password')
           expect(user).not_to be_valid
         end
         it "200文字以上の場合ひっかかる" do
