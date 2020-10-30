@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-10.times do |n|
+20.times do |n|
   User.create!(name:  "test#{n+1}",
                email: "test#{n+1}@example.com",
                password:  "password",
@@ -13,7 +13,7 @@
               )
 end
 
-10.times do |n|
+20.times do |n|
   Work.create!(kind:  0,
                gametitle: "test",
                deadline:  '2020-11-30',
